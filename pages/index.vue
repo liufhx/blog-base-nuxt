@@ -1,12 +1,16 @@
 <template>
-<div>
-  <div>博客首页</div>
-</div>
+  <div id="home">
+    home
+  </div>
+    
+
 </template>
 
 <script>
 export default {
-  name: 'Index',
+  layout:'home',
+  name: 'home',
+
 }
 </script>
 <style lang="scss" scoped>

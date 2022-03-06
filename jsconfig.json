@@ -5,7 +5,9 @@
       "~/*": ["./*"],
       "@/*": ["./*"],
       "~~/*": ["./*"],
-      "@@/*": ["./*"]
+      "@@/*": ["./*"],
+      "@home/*":["./components/home/*"],
+      "@admin/*":["./components/admin/*"]
     }
   },
   "exclude": ["node_modules", ".nuxt", "dist"]

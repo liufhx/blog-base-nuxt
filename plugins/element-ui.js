@@ -6,8 +6,16 @@ import Vue from 'vue'
 
 import {
   Alert,
-  Button
+  Button,
+  Container,
+  Header,
+  Footer,
+  Main,
 }from 'element-ui'
 
 Vue.use(Alert)
 Vue.use(Button)
+Vue.use(Header)
+Vue.use(Footer)
+Vue.use(Main)
+Vue.use(Container)
