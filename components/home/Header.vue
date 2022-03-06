@@ -40,20 +40,14 @@ $hHeight:60px;
 
 
 
-@media screen and (min-width:1200px){
+@media screen and (min-width:1080px){
   #header{
     .header-inner{
-      width: 1200px;
+      width: 1080px;
     }
   }
 }
-@media screen and (max-width:720px){
-  #header{
-    .header-banner{
-      width:720px;
-    }
-  }
-}
+
 
 
  

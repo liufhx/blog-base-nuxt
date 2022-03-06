@@ -1,10 +1,10 @@
 <template>
-  <div id="main">
-    <nuxt/>
+  <div id="footer">
+    foot
   </div>
 </template>
 <script>
 export default {
-  name:'Main'
+  name:'Footer'
 }
 </script>

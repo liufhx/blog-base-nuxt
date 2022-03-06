@@ -5,6 +5,7 @@ import Vue from 'vue'
 // Vue.use(ElementUI)
 
 import {
+  Pagination,
   Alert,
   Button,
   Container,
@@ -13,6 +14,7 @@ import {
   Main,
 }from 'element-ui'
 
+Vue.use(Pagination)
 Vue.use(Alert)
 Vue.use(Button)
 Vue.use(Header)
