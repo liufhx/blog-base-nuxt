@@ -65,6 +65,11 @@ export default {
       target:'http://localhost:3000',
       changeOrigin:true,
       pathRewrite:{}
+    },
+    '/upload/':{
+      target:'http://localhost:3000/public',
+      changeOrigin:true,
+      pathRewrite:{}
     }
   },
 

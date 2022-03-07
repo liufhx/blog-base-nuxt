@@ -48,11 +48,7 @@ export default {
   }
 }
 
-@media screen and (max-width:720px){
-  #home{
-    width: 720px;
-  }
-}
+
 @media screen and (min-width:960px){
   #home{
     .main{
