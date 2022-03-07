@@ -3,13 +3,13 @@
     <div class="card">
       <img src="@/assets/img/avatar_pic.jpg" alt="">
       <img src="@/assets/img/card_bg.jpg" alt="">
-      <button >联系我</button>
+      <nuxt-link to="/home/about"><button>联系我</button></nuxt-link>
     </div>
-    <!-- <div class="aside-category">
+    <div class="aside-category">
       <h3>分类</h3>
       <ul>
         <li v-for="(item,index) in category" :key="index">
-          <a href="">{{`${item._id}(${item.count})`}}</a>
+          <a @click="getEntry(item._id,null)">{{`${item._id}(${item.count})`}}</a>
         </li>
       </ul>
     </div>
@@ -17,10 +17,10 @@
       <h3>标签</h3>
       <ul>
         <li v-for="(item,index) in tag" :key="index">
-          <a href="">{{item._id}}</a>
+          <a @click="getEntry(null,item._id)">{{item._id}}</a>
         </li>
       </ul>
-    </div> -->
+    </div>
   </div>
 </template>
 <script>
@@ -32,6 +32,20 @@ export default {
       tag:[]
     }
   },
+  async fetch(){
+    await this.$axios.get('/api/home/category').then(ret=>{
+      this.category=ret.data.result.category
+    })
+    await this.$axios.get('/api/home/tag').then(ret=>{
+      this.tag=ret.data.result.tag
+    })
+  },
+  methods:{
+    getEntry(category,tag){
+      this.$router.push({path:'/',query:{category,tag}})
+    }
+  }
+
 }
 </script>
 <style lang="scss" scoped>

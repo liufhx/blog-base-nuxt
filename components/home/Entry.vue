@@ -5,7 +5,7 @@
         <h1>{{item.title}}</h1>
         <div class="entry-category">
           <span>分类:</span>
-          <a href="">{{item.category}}</a>
+          <a @click.stop @click="getEntryByFeature(item.category,null)">{{item.category}}</a>
         </div>
         <div class="entry-content" v-html="item.abstract"></div>
 
@@ -16,7 +16,7 @@
         <ul>
           <li>标签:</li>
           <li v-for="(item1,index1) in item.tags" :key="index1">
-            <a href="">{{item1}}</a>
+            <a @click.stop @click="getEntryByFeature(null,item1)">{{item1}}</a>
           </li>
         </ul>
       </div>
@@ -46,24 +46,50 @@ export default {
     }
   },
   async fetch(){
-    let page=this.$route.query.page||1
-    await this.$axios.get(`/api/home/article_list?page=${page}`)
+    let url=this.getEntryUrl()
+    await this.$axios.get(url)
     .then(ret=>{
       this.entries=ret.data.result.articleList
       this.pageInfo=ret.data.result.pageInfo
     })
   },
-  
+  watch:{
+    $route(to,from){
+      this.getEntry()
+    }
+  },
   methods:{
-    getEntry(page){
-      this.$axios.get(`/api/home/article_list?page=${page}`)
+    getEntryUrl(num){
+      let {category,tag,page}=this.$route.query
+      page=num||page||1
+      let url=`/api/home/article_list?page=${page}`   
+      url+=category?`&category=${category}`:''
+      url+=tag?`&tag=${tag}`:''  
+      return url
+    },
+    getEntry(){
+      this.$axios.get(this.getEntryUrl())
       .then(ret=>{
         this.entries=ret.data.result.articleList
         this.pageInfo=ret.data.result.pageInfo
       })
     },
     pageChange(page){
-      this.getEntry(page)
+      this.$route.query.page=page
+      this.getEntry()
+    },
+
+    getEntryByFeature(category,tag){
+      let query=this.$route.query
+      if(category){
+        query.category=category
+        query.tag=null
+      }else if(tag){
+        query.category=null
+        query.tag=tag
+      }
+      
+      this.getEntry()
     }
   }
 }
