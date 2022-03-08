@@ -63,8 +63,8 @@ export default {
       let {category,tag,page}=this.$route.query
       page=num||page||1
       let url=`/api/home/article_list?page=${page}`   
-      url+=category?`&category=${category}`:''
-      url+=tag?`&tag=${tag}`:''  
+      url+=category?`&category=${encodeURI(category)}`:''
+      url+=tag?`&tag=${encodeURI(tag)}`:'' 
       return url
     },
     getEntry(){

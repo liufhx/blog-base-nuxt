@@ -49,7 +49,7 @@ export default {
 }
 
 
-@media screen and (min-width:960px){
+@media screen and (min-width:980px){
   #home{
     .main{
       .main-inner{

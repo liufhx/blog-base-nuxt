@@ -37,7 +37,8 @@ export default {
       src:'~/plugins/element-ui',
       ssr:true
     },
-    '~/plugins/axios'
+    '~/plugins/axios',
+    '~/plugins/util'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

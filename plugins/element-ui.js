@@ -6,18 +6,21 @@ import Vue from 'vue'
 
 import {
   Pagination,
+  Drawer,
+  Form,
+  FormItem,
+  Input,
+  Message,
   Alert,
-  Button,
-  Container,
-  Header,
-  Footer,
-  Main,
+  Button
+ 
 }from 'element-ui'
 
 Vue.use(Pagination)
+Vue.use(Drawer)
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Input)
+Vue.prototype.$message=Message
 Vue.use(Alert)
 Vue.use(Button)
-Vue.use(Header)
-Vue.use(Footer)
-Vue.use(Main)
-Vue.use(Container)
