@@ -28,6 +28,7 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     'element-ui/lib/theme-chalk/index.css',
+    'highlight.js/styles/a11y-dark.css',
     '~/assets/css/base.css'
   ],
 

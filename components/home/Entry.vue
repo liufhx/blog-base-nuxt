@@ -1,6 +1,6 @@
 <template>
   <div id="entry-wrap">
-    <div class="entry" v-for="(item,index) in entries" :key="index">
+    <div @click="toArticle(item._id)" class="entry" v-for="(item,index) in entries" :key="index">
       <div class="entry-left">
         <h1>{{item.title}}</h1>
         <div class="entry-category">
@@ -90,6 +90,10 @@ export default {
       }
       
       this.getEntry()
+    },
+
+    toArticle(_id){
+      this.$router.push({name:'home-article_detail',query:{_id}})
     }
   }
 }
