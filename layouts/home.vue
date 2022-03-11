@@ -3,7 +3,7 @@
     <Header></Header>
     <Banner/>
     <div class="main clearfix">
-      <div class="main-inner">
+      <div class="main-inner clearfix">
         <section class="main-main">
           <nuxt/>
         </section>
@@ -40,7 +40,10 @@ export default {
   .main-main{
     float: left;
     width: 60%;
-    background-color: #ffffff;
+    background-color: #eeeeee;
+    box-shadow: 0 -2px 20px 0.5px #868181;
+    border-radius: 5px;
+    padding: 4px;
   }
   .main-aside{
     width: 35%;

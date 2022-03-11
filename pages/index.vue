@@ -20,8 +20,8 @@
       </div>
       <div class="entry-bottom">
         <ul>
-          <li>{{item.author}}</li>
-          <li>{{item.createDate}}</li>
+          <li><i class="el-icon-user-solid"></i>{{item.author}}</li>
+          <li><i class="el-icon-date"></i>{{dateFormat(item.createDate)}}</li>
         </ul>
       </div>
 
@@ -43,7 +43,7 @@ export default {
     return {
     }
   },
-  async asyncData({app:{$axios},error,query}) {
+  async asyncData({app:{$axios,getEntryUrl},error,query}) {
     try{
       let {category,tag,page}=query
       page=page||1
@@ -91,6 +91,7 @@ export default {
 
     getEntryByFeature(category,tag){
       let query=this.$route.query
+      query.page=1
       if(category){
         query.category=category
         query.tag=null
@@ -98,12 +99,14 @@ export default {
         query.category=null
         query.tag=tag
       }
-      
       this.getEntry()
     },
 
     toArticle(_id){
       this.$router.push({name:'home-article_detail',query:{_id}})
+    },
+    dateFormat(date){
+      return this.$dayjs(date).format('YYYY-MM-DD HH:mm')
     }
   }
 
@@ -192,6 +195,9 @@ export default {
       ul{
         li{
           display: inline-block;
+          i{
+            color:#409EFF;
+          }
         }
       }
     } 

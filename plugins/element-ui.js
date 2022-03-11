@@ -11,8 +11,9 @@ import {
   FormItem,
   Input,
   Message,
-  Alert,
-  Button
+  Result,
+  Button,
+  Checkbox
  
 }from 'element-ui'
 
@@ -22,5 +23,6 @@ Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Input)
 Vue.prototype.$message=Message
-Vue.use(Alert)
+Vue.use(Result)
 Vue.use(Button)
+Vue.use(Checkbox)

@@ -315,14 +315,18 @@ $hHeight:60px;
 
   ::v-deep .el-drawer__body{
     color: white;
-    // background-color: #93C5FD;  
     background-image: url('@/assets/img/card_bg.jpg'); 
+    background-size: contain;
   }
   ::v-deep .el-form-item__label{
     color:white;
   }
   ::v-deep.el-form-item__label{
     padding-right: 0;
+  }
+  .drawer-box-wrap{
+    width: 100%;
+    height: 100%;
   }
   .drawer-box{
     position: relative;
@@ -362,6 +366,7 @@ $hHeight:60px;
     .form-login-enter,.form-login-leave-to{
       transform:translate(-200%);
       opacity: 0;
+      width:0;
       position: absolute;
     }
     .form-regist-enter-active,.form-regist-leave-active{
@@ -370,6 +375,7 @@ $hHeight:60px;
     .form-regist-enter,.form-regist-leave-to{
       transform: translate(100%);
       opacity: 0;
+      width:0;
       position: absolute;
     }
     
