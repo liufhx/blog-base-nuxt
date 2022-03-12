@@ -1,11 +1,22 @@
 export const state=()=>({
-  user:{}
+  user:{},
+  //面包屑
+  crumbList:[
+    {
+      name:'首页',
+      route:'/',
+      active:false,
+    },
+  ],
 })
 
 export const mutations={
   setUser(state,obj){
     state.user={...obj}
-  }
+  },
+  crumbList(state,arr){
+    state.crumbList=[...arr]
+  },
 }
 export const actions={
   async nuxtServerInit ({commit}, {$axios}) {

@@ -5,6 +5,7 @@
     <div class="main clearfix">
       <div class="main-inner clearfix">
         <section class="main-main">
+           <Crumb :crumb-list="getCrumbList"></Crumb>
           <nuxt/>
         </section>
         <section class="main-aside is-show">
@@ -19,11 +20,18 @@
 import Header from '@home/Header'
 import Banner from '@home/Banner'
 import Aside from '@home/Aside'
+import Crumb from '@home/Crumb'
 import Footer from '@home/Footer'
 export default {
   components:{
-    Header,Banner,Aside,Footer
-  }
+    Header,Banner,Aside,Footer,Crumb
+  },
+  middleware:'crumb',
+  computed:{
+    getCrumbList(){
+      return this.$store.state.crumbList
+    }
+  },
 }
 </script>
 <style lang="scss" scoped>
