@@ -20,4 +20,7 @@ home.get('/tag',require('./home/tag'))
 home.post('/comment_add',require('./home/comment_add'))
 home.get('/comment_list',require('./home/comment_list'))
 
+//归档
+home.get('/archive',require('./home/archive'))
+
 module.exports=home

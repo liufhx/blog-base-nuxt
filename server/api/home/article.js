@@ -43,7 +43,7 @@ module.exports=(req,res)=>{
   .then(article=>{
     res.send(preRes('获取文章成功',200,{article:article[0]}))
   }).catch(err=>{
-    res.send(preRes('获取文章失败'+err.message,500,))
+    res.send(preRes('获取文章失败'+err.message,500))
   })
 
   
