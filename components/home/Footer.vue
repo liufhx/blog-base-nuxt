@@ -1,5 +1,5 @@
 <template>
-  <div id="footer">
+  <div class="footer">
     <div class="footer-inner">
       <p>©2021  作者</p>
       <p>博客已运行:{{runtime}}</p>
@@ -35,7 +35,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 $fHeight:60px;
-#footer{
+.footer{
   width: 100%;
   background-color:black ;
   .footer-inner{

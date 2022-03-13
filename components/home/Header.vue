@@ -1,10 +1,10 @@
 <template>
-  <header id="header">
+  <header class="header">
     <div class="header-inner clearfix">
       <nav class="header-inner-left">
         <nuxt-link to="/">首页</nuxt-link>
         <nuxt-link to="/home/archive">归档</nuxt-link>
-        <nuxt-link to="/home/timeline">时间轴</nuxt-link>
+        <!-- <nuxt-link to="/home/timeline">时间轴</nuxt-link> -->
         <nuxt-link to="/home/about">关于</nuxt-link>
       </nav>
       <nav class="header-inner-right">
@@ -268,7 +268,7 @@ export default {
 <style lang="scss" scoped>
 $hHeight:60px;
 
-#header{
+.header{
   width: 100%;
   height:$hHeight;
   background-color: #0f161cce;

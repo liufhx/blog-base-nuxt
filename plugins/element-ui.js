@@ -13,7 +13,9 @@ import {
   Message,
   Result,
   Button,
-  Checkbox
+  Checkbox,
+  Collapse,
+  CollapseItem
  
 }from 'element-ui'
 
@@ -26,3 +28,5 @@ Vue.prototype.$message=Message
 Vue.use(Result)
 Vue.use(Button)
 Vue.use(Checkbox)
+Vue.use(Collapse)
+Vue.use(CollapseItem)

@@ -1,5 +1,5 @@
 <template>
-  <div id="aside">
+  <div class="aside">
     <div class="card">
       <img src="@/assets/img/avatar_pic.jpg" alt="">
       <img src="@/assets/img/card_bg.jpg" alt="">
@@ -49,7 +49,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-#aside{
+.aside{
   width: 100%;
   // background-color: #ffffff;
   box-shadow: 0 -2px 20px 0.5px #868181;

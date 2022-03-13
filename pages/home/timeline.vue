@@ -1,6 +1,6 @@
 <template>
   <div id="timeline">
-    时间线
+    时间轴
   </div>
 </template>
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div id="banner">
+  <div class="banner">
     <div class="banner-title">我的个人博客</div>
   </div>
 </template>
@@ -11,7 +11,7 @@ export default {
 <style lang="scss" scoped>
 $bannerUrl:'@/assets/img/banner.jpg';
 
-#banner{
+.banner{
   width:100%;
   height:320px;
   position: relative;

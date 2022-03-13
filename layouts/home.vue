@@ -48,6 +48,7 @@ export default {
   .main-main{
     float: left;
     width: 60%;
+    min-height: 400px;
     background-color: #eeeeee;
     box-shadow: 0 -2px 20px 0.5px #868181;
     border-radius: 5px;
