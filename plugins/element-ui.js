@@ -15,7 +15,10 @@ import {
   Button,
   Checkbox,
   Collapse,
-  CollapseItem
+  CollapseItem,
+  Container,
+  Aside,
+  Main
  
 }from 'element-ui'
 
@@ -30,3 +33,6 @@ Vue.use(Button)
 Vue.use(Checkbox)
 Vue.use(Collapse)
 Vue.use(CollapseItem)
+Vue.use(Container)
+Vue.use(Aside)
+Vue.use(Main)

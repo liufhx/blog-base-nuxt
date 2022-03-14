@@ -1,0 +1,68 @@
+<template>
+  <el-container>
+    <el-aside>
+      <Aside :menu="menu"></Aside>
+    </el-aside>
+    <el-main>
+      <nuxt/>
+    </el-main>
+  </el-container>
+</template>
+<script>
+import Aside from '@admin/Aside'
+export default {
+  name:'admin',
+  data() {
+    return {
+      menu:[
+        {
+          title:'用户管理',
+          route:'',
+          open:true,
+          children:[
+            {
+              title:'用户列表',
+              route:'/admin/user_list'
+            },
+            {
+              title:'用户更改',
+              route:'/admin/user_edit'
+            },
+            {
+              title:'用户创建',
+              route:'/admin/user_add'
+            },
+          ],
+        },
+        {
+          title:'文章管理',
+          route:'',
+          open:true,
+          children:[
+            {
+              title:'文章列表',
+              route:'/admin/article_list'
+            },
+            {
+              title:'文章更改',
+              route:'/admin/article_edit'
+            },
+            {
+              title:'文章创建',
+              route:'/admin/article_add'
+            },
+          ],     
+        },
+        {
+          title:'首页',
+          route:'/admin',
+          open:false,
+        }
+      ]
+    }
+  },
+  components:{
+    Aside
+  }
+}
+</script>
