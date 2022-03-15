@@ -18,7 +18,10 @@ import {
   CollapseItem,
   Container,
   Aside,
-  Main
+  Main,
+  Table,
+  TableColumn,
+  Popconfirm
  
 }from 'element-ui'
 
@@ -36,3 +39,6 @@ Vue.use(CollapseItem)
 Vue.use(Container)
 Vue.use(Aside)
 Vue.use(Main)
+Vue.use(Table)
+Vue.use(TableColumn)
+Vue.use(Popconfirm)

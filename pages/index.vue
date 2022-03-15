@@ -43,7 +43,7 @@ export default {
     return {
     }
   },
-  async asyncData({app:{$axios,getEntryUrl},error,query}) {
+  async asyncData({app:{$axios},error,query}) {
     try{
       let {category,tag,page}=query
       page=page||1

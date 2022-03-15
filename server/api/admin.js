@@ -4,7 +4,7 @@ const admin=express.Router()
 
 
 //增加加权限验证
-admin.use('/',require('./admin/role_auth'))
+// admin.use('/',require('./admin/role_auth'))
 
 admin.get('/user_list',require('./admin/user_list'))
 admin.post('/user_add',require('./admin/user_add'))
