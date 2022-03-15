@@ -9,13 +9,13 @@
           </div>
           <transition name="submenu-item">
             <ul v-show="item.open">
-              <li @click="select=item1.route" v-for="(item1,index1) in item.children" :key="index1" :class="['submenu-item',item1.route==select?'menu-selected':'']">
+              <li v-for="(item1,index1) in item.children" :key="index1" :class="['submenu-item',item1.route==select?'menu-selected':'']">
                 <nuxt-link :to="item1.route">{{item1.title}}</nuxt-link>
               </li>
             </ul>
           </transition>
         </div>
-        <div @click="select=item.route" :class="['menu-item',item.route==select?'menu-selected':'']" v-else>
+        <div :class="['menu-item',item.route==select?'menu-selected':'']" v-else>
           <nuxt-link :to="item.route">
             <i class="el-icon-document"></i>
             <span>{{item.title}}</span>
@@ -30,17 +30,15 @@ export default {
   name:'Aside',
   data() {
     return {
-      select:''
+      
     }
   },
-  props:['menu'],
+  props:['menu','select'],
   methods:{
     submenuOpen(i){
       this.menu[i].open=!this.menu[i].open
     }
-  },
-  created(){
-    this.select=this.$route.path
+    
   }
 
 }

@@ -31,7 +31,7 @@
           <el-popconfirm @confirm="userDelete(scope.row._id)" :title="`确定删除用户${scope.row.username}吗?`">
             <el-button slot="reference" type="text" size="small">删除</el-button>
           </el-popconfirm>
-          <el-button type="text" size="small">编辑</el-button>
+          <el-button type="text" size="small" @click="userEdit(scope.row)">编辑</el-button>
         </template>
       </el-table-column>
       
@@ -83,6 +83,12 @@ export default {
         this.$message({type:'error',showClose:true,message:'删除用户失败'})
       })
     },
+    userEdit(user){
+      this.$router.push({
+        name:'admin-user_edit',
+        query:{_id:user._id},
+        params:{userInfo:user}})
+    },
     //更新用户列表
     getUserList(){
       let {page}=this.$route.query
@@ -104,6 +110,7 @@ export default {
       this.$route.query.page=page
       this.getUserList()
     },
+
 
   }
 }

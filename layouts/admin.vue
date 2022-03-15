@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-aside>
-      <Aside :menu="menu"></Aside>
+      <Aside :menu="menu" :select="menuSelect"></Aside>
     </el-aside>
     <el-main>
       <nuxt/>
@@ -58,11 +58,20 @@ export default {
           route:'/admin',
           open:false,
         }
-      ]
+      ],
+      menuSelect:''
     }
   },
   components:{
     Aside
+  },
+  created(){
+    this.menuSelect=this.$route.path
+  },
+  watch:{
+    $route(to,from){
+      this.menuSelect=to.path
+    }
   }
 }
 </script>

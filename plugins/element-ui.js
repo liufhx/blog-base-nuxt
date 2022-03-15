@@ -10,6 +10,8 @@ import {
   Form,
   FormItem,
   Input,
+  Select,
+  Option,
   Message,
   Result,
   Button,
@@ -30,6 +32,8 @@ Vue.use(Drawer)
 Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Input)
+Vue.use(Select)
+Vue.use(Option)
 Vue.prototype.$message=Message
 Vue.use(Result)
 Vue.use(Button)
