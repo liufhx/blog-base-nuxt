@@ -23,7 +23,8 @@ import {
   Main,
   Table,
   TableColumn,
-  Popconfirm
+  Popconfirm,
+  Tag
  
 }from 'element-ui'
 
@@ -46,3 +47,4 @@ Vue.use(Main)
 Vue.use(Table)
 Vue.use(TableColumn)
 Vue.use(Popconfirm)
+Vue.use(Tag)

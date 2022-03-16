@@ -107,3 +107,12 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.article-list{
+  ::v-deep.el-button{
+    span:hover{
+      cursor: pointer;
+    }
+  }
+}
+</style>
