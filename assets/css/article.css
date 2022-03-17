@@ -38,6 +38,7 @@
 .article-style pre {
   padding: 10px 8px ;
   margin: 5px 0;
+  overflow: auto;
 }
 .article-style pre code {
   display: block;

@@ -36,10 +36,14 @@ module.exports=async(req,res)=>{
   if(archiveDate){
     query.push({$match:{archiveDate}})
   }else{
-    query.push({$group:{
-      _id:'$archiveDate',
-      archives:{$push:'$$ROOT'}
-    }})
+    query.push(...[
+      {$group:{
+        _id:'$archiveDate',
+        archives:{$push:'$$ROOT'},
+        
+      }},
+      {$sort:{_id:-1}}
+    ])
   }
 
   await Article.aggregate(query).then(ret=>{

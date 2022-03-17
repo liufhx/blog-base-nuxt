@@ -29,17 +29,7 @@ export default {
       let archive=[]
       if(meta.status==200){
         archive=result.archive   
-        
-        archive.push({
-          _id:'2022-11',
-          archives:[
-            {
-              title:'标题',
-              createDate:'2022-11-06'
-
-            }
-          ]
-        })
+        console.log(archive)
       }else{
         throw new Error('获取文章归档失败')
       }
@@ -47,6 +37,9 @@ export default {
     }catch(e){
       error(e)
     }
+  },
+  mounted(){
+    console.log(this.archive)
   },
   methods:{
     dateFormat(date){
