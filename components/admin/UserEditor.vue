@@ -152,3 +152,12 @@ export default {
 
 }
 </script>
+<style lang="scss" scoped>
+.user-editor{
+  margin-top:10px;
+  ::v-deep.el-input{
+    width: 60%;
+  }
+}
+  
+</style>

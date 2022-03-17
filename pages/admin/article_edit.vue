@@ -1,6 +1,6 @@
 <template>
-  <div>
-    article_edit
+  <div class="article-edit">
+    <h3>文章编辑</h3>
     <div v-if="$route.query._id&&articleInfo">
       <ArticleEditor :_id="$route.query._id" :article="articleInfo"></ArticleEditor>
     </div>

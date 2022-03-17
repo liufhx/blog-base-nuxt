@@ -12,7 +12,7 @@
       </el-form-item>
       <el-form-item label="标签:" >
         <el-tag closable v-for="(tag,index) in articleInfo.tags" :key="index" @close="closeTag(tag)">{{tag}}</el-tag>
-        <el-input v-if="tagInput.visible" v-model="tagInput.value" ref="saveTagInput" size="small"
+        <el-input v-if="tagInput.visible" v-model="tagInput.value" ref="saveTagInput"
         @keyup.enter.native="tagInputConfirm" @blur="tagInputConfirm"></el-input>
         <el-button v-else size="small" @click="showTagInput">+ 添加标签</el-button>
       </el-form-item>
@@ -189,6 +189,7 @@ export default {
     config1.onchange=html=>this.articleInfo.abstract=html
     config1.menus=[]
     config1.showFullScreen =false
+    config1.height=150
     config1.zIndex = 500
     this.editor1=editor1
     editor1.create()
@@ -222,8 +223,17 @@ export default {
       cursor: pointer;
     }
   }
+  ::v-deep.el-input{
+    width: 50%;
+  }
   ::v-deep.el-form-item__label{
     float: unset;
+  }
+  ::v-deep.el-form-item{
+    margin-bottom:0;
+  }
+  ::v-deep.el-button{
+    margin-top:20px
   }
 
 

@@ -49,8 +49,7 @@ $menuHeight:48px;
   background: #545c64;
   color:#fff;
   cursor:pointer;
-  height: 800px;
-  width:250px;
+  height: 100%;
   .menu{
     font-size: 20px;
     font-weight: 400;

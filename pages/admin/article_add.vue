@@ -1,7 +1,6 @@
 <template>
-  <div>
-    文章创建
-    
+  <div class="article-add">
+    <h3> 文章创建</h3>
     <ArticleEditor></ArticleEditor>
   </div>
 </template>

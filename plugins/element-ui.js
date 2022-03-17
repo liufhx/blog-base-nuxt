@@ -19,6 +19,7 @@ import {
   Collapse,
   CollapseItem,
   Container,
+  Header,
   Aside,
   Main,
   Table,
@@ -42,6 +43,7 @@ Vue.use(Checkbox)
 Vue.use(Collapse)
 Vue.use(CollapseItem)
 Vue.use(Container)
+Vue.use(Header)
 Vue.use(Aside)
 Vue.use(Main)
 Vue.use(Table)

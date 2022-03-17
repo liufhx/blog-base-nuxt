@@ -1,5 +1,6 @@
 <template>
   <div class="article-list">
+    <h3>文章列表</h3>
     <el-table :data="articleList">
       <el-table-column prop="createDate" label="创建日期">
         <template slot-scope="scope">

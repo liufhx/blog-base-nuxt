@@ -10,9 +10,10 @@
       <nav class="header-inner-right">
         <a v-if="!getUser.username" @click="drawer=true">登录/注册</a>
         <div v-else>
-          <a href="javascript:void(0);">{{getUser.username}}</a>    
+          <a href="javascript:void(0);"><i class="el-icon-user"></i>{{getUser.username}}</a>    
           <ul>
-            <li><a @click="logout">退出</a></li>
+            <li v-if="getUser.role==='admin'"><a @click="$router.push('/admin/user_list')">后台管理</a></li>
+            <li><a @click="logout">退出</a></li>    
           </ul>
         </div>     
       </nav>

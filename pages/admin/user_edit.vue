@@ -1,5 +1,6 @@
 <template>
   <div class="user-edit">
+    <h3>用户编辑</h3>
     <div v-if="$route.query._id&&userInfo">
       <UserEditor :_id="$route.query._id" :user="userInfo"></UserEditor>
     </div>
