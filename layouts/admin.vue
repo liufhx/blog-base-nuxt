@@ -71,6 +71,10 @@ export default {
               route:'/admin/article_add'
             },
           ],     
+        },
+        {
+          title:'设置About页面',
+          route:'/admin/about_set'
         }
       ],
       menuSelect:''

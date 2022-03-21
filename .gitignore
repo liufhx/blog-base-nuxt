@@ -91,3 +91,4 @@ sw.*
 
 config.js
 /public/upload/cover/
+/page.json

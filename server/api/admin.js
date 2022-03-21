@@ -19,6 +19,7 @@ admin.get('/article_delete',require('./admin/article_delete'))
 
 admin.get('/comment_delete',require('./admin/comment_delete'))
 
+admin.get('/about_set',require('./admin/about_set'))
 
 
 

@@ -16,6 +16,19 @@ if(!fs.existsSync(dir)){
   })
 }
 
+//创建页面数据文件
+let pageDir=path.join(__dirname,'../','page.json')
+if(!fs.existsSync(pageDir)){
+  let initDate=Date()
+  let page=JSON.stringify({initDate})
+  fs.writeFile(pageDir,page,err=>{
+    if(err!=null){
+      console.log(err)
+    }
+  })
+}
+
+
 //创建初始管理员账户
 User.findOne({email:admin.email})
 .then(ret=>{

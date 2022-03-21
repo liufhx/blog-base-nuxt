@@ -1,6 +1,6 @@
 <template>
   <div class="article-list">
-    <h3>文章列表</h3>
+    <h3>设置About页面</h3>
     <el-table :data="articleList">
       <el-table-column prop="createDate" label="创建日期">
         <template slot-scope="scope">
@@ -24,10 +24,10 @@
       </el-table-column>
       <el-table-column label="操作">
         <template slot-scope="scope">
-          <el-popconfirm @confirm="articleDelete(scope.row._id)" :title="`确定删除文章${scope.row.title}吗?`">
-            <el-button slot="reference" type="text" size="small">删除</el-button>
+          <el-popconfirm @confirm="setAbout(scope.row._id)" :title="`确定设置该文章到About页面吗?`">
+            <el-button slot="reference" type="text" size="small">设置</el-button>
           </el-popconfirm>
-          <el-button type="text" size="small" @click="articleEdit(scope.row)">编辑</el-button>
+          
         </template>
       </el-table-column>
       
@@ -86,25 +86,17 @@ export default {
         this.$message({type:'error',showClose:true,message:'更新文章列表失败'})
       })
     },
-    articleDelete(_id){
-      this.$axios.get(`/api/admin/article_delete?_id=${_id}`).then(ret=>{
-        let {meta}=ret.data
-        if(meta.status==200){
-          this.$message({type:'success',showClose:true,message:'删除文章成功'})
-          this.getArticleList()
+    setAbout(_id){
+      this.$axios.get(`/api/admin/about_set?_id=${_id}`).then(ret=>{
+        if(ret.data.meta.status==200){
+           this.$message({type:'success',showClose:true,message:'设置about页面_id成功'})
         }else{
-          this.$message({type:'error',showClose:true,message:'删除文章失败'})
+          throw new Error(ret.data.meta.msg)
         }
       }).catch(err=>{
-        this.$message({type:'error',showClose:true,message:'删除文章失败'})
+        this.$message({type:'error',showClose:true,message:'设置about页面_id失败'})
       })
-    },
-    articleEdit(article){
-      this.$router.push({
-        name:'admin-article_edit',
-        query:{_id:article._id}
-      })
-    },
+    }
   }
 }
 </script>

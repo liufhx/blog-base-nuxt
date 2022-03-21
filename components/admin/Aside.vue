@@ -17,7 +17,7 @@
         </div>
         <div :class="['menu-item',item.route==select?'menu-selected':'']" v-else>
           <nuxt-link :to="item.route">
-            <i class="el-icon-document"></i>
+            <i class="el-icon-setting"></i>
             <span>{{item.title}}</span>
           </nuxt-link>
         </div>
@@ -28,11 +28,6 @@
 <script>
 export default {
   name:'Aside',
-  data() {
-    return {
-      
-    }
-  },
   props:['menu','select'],
   methods:{
     submenuOpen(i){

@@ -29,7 +29,6 @@ export default {
       let archive=[]
       if(meta.status==200){
         archive=result.archive   
-        console.log(archive)
       }else{
         throw new Error('获取文章归档失败')
       }
@@ -37,9 +36,6 @@ export default {
     }catch(e){
       error(e)
     }
-  },
-  mounted(){
-    console.log(this.archive)
   },
   methods:{
     dateFormat(date){

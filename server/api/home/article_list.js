@@ -1,5 +1,8 @@
 const {Article,Tag}=require('../../model/article')
 const {preRes}=require('../../util/preRespone')
+const mongoose=require('mongoose')
+const fs=require('fs')
+const path=require('path')
 
 module.exports=async(req,res)=>{
   
@@ -10,7 +13,15 @@ module.exports=async(req,res)=>{
     pagesize=parseInt(pagesize)||10
 
     
-
+    //去除关于页面的文章
+    const PageDir=path.join(__dirname,'../../../','page.json')
+    const PAGE=fs.readFileSync(PageDir,'utf-8')
+    let {about}=JSON.parse(PAGE)
+    if(about&&about._id){
+      query.push({$match:{
+        _id:{$ne:mongoose.Types.ObjectId(about._id)}
+      }})
+    }
     
 
     if(category){
@@ -32,6 +43,7 @@ module.exports=async(req,res)=>{
     count=await Article.countDocuments(countQuery)
     total=Math.ceil(count/pagesize)
     start=(page-1)*pagesize
+
 
     query.push(...[
       {$skip:start},
