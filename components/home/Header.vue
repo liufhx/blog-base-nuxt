@@ -316,7 +316,7 @@ $hHeight:60px;
 
   ::v-deep .el-drawer__body{
     color: white;
-    background-image: url('@/assets/img/card_bg.jpg'); 
+    background-image: url('/img/card_bg.jpg'); 
     background-size: contain;
   }
   ::v-deep .el-form-item__label{

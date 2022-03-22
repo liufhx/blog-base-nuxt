@@ -1,18 +1,22 @@
 <template>
   <div class="footer">
     <div class="footer-inner">
-      <p>©2021  作者</p>
+      <p>{{copyright}}</p>
       <p>博客已运行:{{runtime}}</p>
     </div>
   </div>
 </template>
 <script>
+import {page} from '@/config'
+import {initDate} from '@/page.json'
 export default {
   name:'Footer',
   data() {
     let runtime=this.setDuration()
     return {
-      runtime
+      runtime,
+      copyright:page.home.copyright,
+      initDate:initDate
     }
   },
   created(){
@@ -20,7 +24,8 @@ export default {
   },
   methods:{
     setDuration(){
-      let start=this.$dayjs('2021-03-12').valueOf()
+      const initDate=this.initDate?this.initDate:'2022-1-1'
+      let start=this.$dayjs(initDate).valueOf()
       let now=Date.now()   
       let time=Math.floor((now-start)/1000),
       day=Math.floor(time/(24*3600)),

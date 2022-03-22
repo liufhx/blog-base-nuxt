@@ -29,7 +29,6 @@ export default {
         let ret=await $axios.get(`/api/home/article?_id=${_id}`)
         if(ret.data.meta.status==200){
           let {article}=ret.data.result
-          console.log(article)
           return {article}
         }else{
           throw new Error(ret.data.meta.msg)

@@ -22,7 +22,7 @@
       </el-form-item>
       <el-form-item label="文章封面:" >
         <div class="cover-preview" @click="choiceImg">
-          <img v-show="!articleInfo.cover"  src="@/assets/img/add-tag.png" alt="图片加载失败" title="优质封面有助于获得人气">
+          <img v-show="!articleInfo.cover"  src="/img/add-tag.png" alt="图片加载失败" title="优质封面有助于获得人气">
           <img v-show="articleInfo.cover" :src="articleInfo.cover" alt="图片加载失败" ref="preview" title="优质封面有助于获得人气">
           <div class="cover-cancel" @click="fileClear" @click.stop>
             <span>X</span>

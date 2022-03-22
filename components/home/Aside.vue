@@ -1,8 +1,8 @@
 <template>
   <div class="aside">
     <div class="card">
-      <img src="@/assets/img/avatar_pic.jpg" alt="">
-      <img src="@/assets/img/card_bg.jpg" alt="">
+      <img :src="card_bg" alt="">
+      <img :src="avatar_pic" alt="">
       <nuxt-link to="/home/about"><button>联系我</button></nuxt-link>
     </div>
     <div class="aside-category">
@@ -24,6 +24,7 @@
   </div>
 </template>
 <script>
+import {page} from '@/config'
 export default {
   name:'Aside',
   data() {
@@ -44,6 +45,10 @@ export default {
     getEntry(category,tag){
       this.$router.push({path:'/',query:{category,tag}})
     }
+  },
+  created(){
+    this.avatar_pic=page.home.avatar_pic
+    this.card_bg=page.home.card_bg
   }
 
 }
@@ -57,6 +62,7 @@ export default {
   .card{
     img:nth-child(1){
       width: 100%;
+      min-height: 150px;
       border-radius: 2px;
     }
     img:nth-child(2){

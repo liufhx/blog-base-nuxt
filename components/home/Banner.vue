@@ -1,21 +1,32 @@
 <template>
-  <div class="banner">
-    <div class="banner-title">我的个人博客</div>
+  <div class="banner" :style="{backgroundImage:`url(${banner})`}">
+    <div class="banner-title">{{title}}</div>
   </div>
 </template>
 <script>
+import {page} from '@/config'
 export default {
-  name:'Banner'
+  name:'Banner',
+  data() {
+    return {
+      title:page.home.title,
+    }
+  },
+  created(){
+    this.banner=page.home.banner
+  }
+ 
+  
 }
 </script>
 <style lang="scss" scoped>
-$bannerUrl:'@/assets/img/banner.jpg';
+// $bannerUrl:'@/assets/img/banner.jpg';
 
 .banner{
   width:100%;
   height:320px;
   position: relative;
-  background-image: url($bannerUrl);
+  // background-image: url($bannerUrl);
   background-repeat: no-repeat;
   background-size: 100%;
   .banner-title{
