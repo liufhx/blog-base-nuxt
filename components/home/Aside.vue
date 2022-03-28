@@ -58,6 +58,8 @@ export default {
   width: 100%;
   // background-color: #ffffff;
   box-shadow: 0 -2px 20px 0.5px #868181;
+  font-size:16px;
+  padding-bottom : 60px;
 
   .card{
     img:nth-child(1){
@@ -147,6 +149,7 @@ export default {
           border-radius: 15px;
           padding: 0 0.5em;
           margin-right: 1em;
+          font-size:15px;
           &:hover{
             background-color: #267dcc;
             color:#ffffff;

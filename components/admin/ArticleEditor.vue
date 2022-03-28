@@ -17,7 +17,8 @@
         <el-button v-else size="small" @click="showTagInput">+ 添加标签</el-button>
       </el-form-item>
       <el-form-item label="摘要:" >
-        <div id="article-abstract">
+        <div style="width:80%;">
+          <div id="article-abstract"></div>
         </div>
       </el-form-item>
       <el-form-item label="文章封面:" >
@@ -34,8 +35,9 @@
         </div>
       </el-form-item>
       <el-form-item label="正文:">
-        <div id="article-content">
-        </div>       
+        <div style="width:80%;">
+          <div id="article-content"></div>  
+        </div>     
       </el-form-item>
 
       <el-form-item>
@@ -191,6 +193,7 @@ export default {
     config1.showFullScreen =false
     config1.height=150
     config1.zIndex = 500
+    config1.placeholder="请输入摘要，可不填写"
     this.editor1=editor1
     editor1.create()
     editor1.txt.html(this.articleInfo.abstract)
@@ -219,6 +222,7 @@ export default {
 <style lang="scss" scoped>
 .article-editor{
   ::v-deep.el-button{
+    margin-top:20px;
     span:hover{
       cursor: pointer;
     }
@@ -232,8 +236,8 @@ export default {
   ::v-deep.el-form-item{
     margin-bottom:0;
   }
-  ::v-deep.el-button{
-    margin-top:20px
+  ::v-deep.el-tag{
+    margin-right: 10px;
   }
 
 

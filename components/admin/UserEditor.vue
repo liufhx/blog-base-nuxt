@@ -158,6 +158,11 @@ export default {
   ::v-deep.el-input{
     width: 60%;
   }
+  ::v-deep.el-button{
+    span:hover{
+      cursor: pointer;
+    }
+  }
 }
   
 </style>

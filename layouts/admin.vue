@@ -20,7 +20,7 @@
         <el-aside width="200px">
           <Aside :menu="menu" :select="menuSelect"></Aside>
         </el-aside>
-        <el-main>
+        <el-main style="background:#eeeeee;">
           <nuxt/>
         </el-main>
       </el-container>
