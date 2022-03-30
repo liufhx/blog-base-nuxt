@@ -23,17 +23,13 @@ export default {
   },
   async asyncData({$axios,error}) {
     try{
-      let page=await require('@/page.json')
-      if(page.about){
-        let _id=page.about._id
-        let ret=await $axios.get(`/api/home/article?_id=${_id}`)
-        if(ret.data.meta.status==200){
-          let {article}=ret.data.result
-          return {article}
-        }else{
-          throw new Error(ret.data.meta.msg)
-        }
-      }
+      let ret=await $axios.get(`/api/home/about`)
+      if(ret.data.meta.status==200){
+        let {article}=ret.data.result
+        return {article}
+      }else{
+        throw new Error(ret.data.meta.msg)
+      }   
     }catch(err){
       error(err.message)
     }

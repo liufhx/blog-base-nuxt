@@ -22,5 +22,7 @@ home.get('/comment_list',require('./home/comment_list'))
 
 //归档
 home.get('/archive',require('./home/archive'))
+//关于
+home.get('/about',require('./home/about'))
 
 module.exports=home
