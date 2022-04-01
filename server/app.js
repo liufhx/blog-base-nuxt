@@ -37,6 +37,6 @@ app.use((err,req,res,next)=>{
   next()
 })
 
-app.listen(3000,()=>{
+app.listen(server.port,()=>{
   console.log('server is running...')
 })
