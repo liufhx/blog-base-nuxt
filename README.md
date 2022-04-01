@@ -10,6 +10,7 @@
 
 ## 项目部署
 
+
 #### 获取项目
 
 ```bash
@@ -23,6 +24,7 @@ git clone https://github.com/liufhx/blog-base-nuxt.git
 进入项目目录，将**./my.config.js** 文件更改为 **./config.js**,并根据内容提示对服务器需要的配置项进行配置。
 
 ```bash
+
 #安装进程管理工具pm2
 npm install pm2 -g
 
