@@ -1,9 +1,11 @@
 module.exports={
   server:{
-    //配置后台服务器数据库，必填
+    //后台服务器占用端口
+    port:'3000',
+    //mongodb数据库信息,必填
     database:{
       host:'',
-      port:'',
+      port:'27017',
       database:'',
       name:'',
       pwd:''
@@ -12,12 +14,12 @@ module.exports={
       //密码加密密匙，和加密次数
       salt:'salt',
       saltTimes:2,
-      //配置初始管理员，必填
+      //初始管理员
       admin:{
-        username:'',
-        password:'',
-        email:'',
-        role:''
+        username:'root',
+        password:'12345678',
+        email:'8888@qq.com',
+        role:'amdin'
       }
     },
     session:{
@@ -35,7 +37,14 @@ module.exports={
     }
   },
   page:{
-
+    port:'3001',
+    home:{
+      title:'root的个人博客',
+      banner:'/img/banner.jpg',
+      card_bg:'/img/card_bg.jpg',
+      avatar_pic:'/img/avatar_pic.jpg',
+      copyright:'©2021 root'
+    }
   }
 }
 

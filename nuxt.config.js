@@ -2,15 +2,16 @@ const path=require('path')
 function resolve(dir){
   return path.join(__dirname,dir)
 }
+const {server,page}=require('./config')
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   server:{
-    port:3001,
+    port:page.port,
     host:'0.0.0.0'
   },
   head: {
-    title: 'blog-base-nuxt',
+    title: page.home.title,
     htmlAttrs: {
       lang: 'en'
     },
@@ -64,12 +65,12 @@ export default {
   },
   proxy:{
     '/api/':{
-      target:'http://localhost:3000',
+      target:'http://localhost:'+server.port,
       changeOrigin:true,
       pathRewrite:{}
     },
     '/upload/':{
-      target:'http://localhost:3000/public',
+      target:`http://localhost:${server.port}/public`,
       changeOrigin:true,
       pathRewrite:{}
     }
