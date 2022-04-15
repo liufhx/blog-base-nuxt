@@ -53,7 +53,7 @@ export default {
       },
       userInfoRules:{
         username:[
-          {required:true,message:'请输入邮箱',trigger: 'blur'},
+          {required:true,message:'请输入用户名',trigger: 'blur'},
           {
             type:'string',
             min:2,
@@ -73,11 +73,11 @@ export default {
           {required:true,message:'请输入密码',trigger:'blur'},
           {
             type:'string',
-            pattern:/^[a-zA-z0-9]{8,30}$/g,
+            pattern:/^[a-zA-z0-9\.,!@#$%\^&*]{8,30}$/g,
             transform(value) {
               return value.trim()
             },
-            message:'密码格式错误,密码长度为8-30的字符',
+            message:'密码格式错误,密码长度为8-30的数字或字符',
             trigger:['blur']
           }
         ],

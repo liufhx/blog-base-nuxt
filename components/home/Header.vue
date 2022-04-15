@@ -103,7 +103,7 @@ export default {
           {required:true,message:'请输入密码',trigger:'blur'},
           {
             type:'string',
-            pattern:/^[a-zA-z0-9]{8,30}$/g,
+            pattern:/^[a-zA-z0-9\.,!@#$%\^&*]{8,30}$/g,
             transform(value) {
               return value.trim()
             },
@@ -123,7 +123,7 @@ export default {
       
       registRules:{
         name:[
-          {required:true,message:'请输入邮箱',trigger: 'blur'},
+          {required:true,message:'请输入用户名',trigger: 'blur'},
           {
             type:'string',
             min:2,
@@ -143,7 +143,7 @@ export default {
           {required:true,message:'请输入密码',trigger:'blur'},
           {
             type:'string',
-            pattern:/^[a-zA-z0-9]{8,30}$/g,
+            pattern:/^[a-zA-z0-9\.,!@#$%\^&*]{8,30}$/g,
             transform(value) {
               return value.trim()
             },

@@ -125,7 +125,7 @@ export default {
     min-height: 100vh;
   }
   .el-header {
-    background-color: #B3C0D1;
+    background-image: linear-gradient(to right, #B3C0D1 , #B3D9D9);
     color: #333;
     padding-right: 0;
     h1{
@@ -136,8 +136,12 @@ export default {
     .admin-user{
       float: right;
       line-height: 60px;
+      margin-right: 100px;
       &>div{
         position: relative;
+        &>span{
+          padding: 0 20px;
+        }
         &:hover>ul{
           transform: scaleY(1);
         }
@@ -149,17 +153,19 @@ export default {
           line-height: 40px;
           text-align: center;
           transform: scaleY(0);
-          overflow: hidden;
           transform-origin: 0 0;
           transition: all .5s;
           li{
             height: 40px;
             background-color: #b3c0d1;
+             width: fit-content;
             
             a{
               display: block;
               width: 100%;
               height: 40px;
+              padding: 0 20px;
+              white-space: nowrap;
               &:hover{
                 background-color: #126ed1;
                 color:white;
