@@ -43,7 +43,9 @@ module.exports={
       banner:'/img/banner.jpg',
       card_bg:'/img/card_bg.jpg',
       avatar_pic:'/img/avatar_pic.jpg',
-      copyright:'©2021 root'
+      copyright:'©2021 root',
+       //备案信息，可不填
+       icp:''
     }
   }
 }

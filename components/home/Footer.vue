@@ -3,6 +3,7 @@
     <div class="footer-inner">
       <p>{{copyright}}</p>
       <p>博客已运行:{{runtime}}</p>
+      <p class="icp" v-if="icp.length>0"><a target="_blank" href="http://beian.miit.gov.cn" >{{icp}}</a></p>
     </div>
   </div>
 </template>
@@ -16,6 +17,7 @@ export default {
     return {
       runtime,
       copyright:page.home.copyright,
+      icp:page.home.icp,
       initDate:initDate
     }
   },
@@ -52,6 +54,12 @@ $fHeight:60px;
     font-size:14px;
     color: #ffff;
     line-height: 20px;
+    margin: 5px 0;
+  }
+  a{
+    &:hover{
+      color: #ff6a00;
+    }
   }
 }
 </style>
