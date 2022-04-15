@@ -275,6 +275,7 @@ $hHeight:60px;
   background-color: #0f161cce;
   .header-inner{
     height:100%;
+    width: 960px;
     margin:0 auto;
     a{
       display: inline-block;
@@ -292,12 +293,16 @@ $hHeight:60px;
       float: right;
       &>div{
         position: relative;
+        &>a{
+          display: block;
+          padding: 0 10px;
+        }
         &:hover>ul{
           transform: scaleY(1);
         }
         &>ul{
           position: absolute;
-          width: 100%;
+          width: fit-content;
           z-index: 10;
           top:$hHeight;
           text-align: center;
@@ -305,8 +310,10 @@ $hHeight:60px;
           overflow: hidden;
           transform-origin: 0 0;
           transition: all .5s;
+         
           a{
             width: 100%;
+            white-space: nowrap;
             line-height: 40px;
           }
         }

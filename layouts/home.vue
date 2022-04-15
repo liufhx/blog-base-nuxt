@@ -35,7 +35,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
+#home{
+  min-width: 960px;
+}
 .main{
   width: 100%;
   background-color: #eeeeee;
@@ -70,7 +72,7 @@ export default {
     }
   }
 }
-@media screen and (max-width:720px){
+@media screen and (max-width:900px){
   #home{
     .main{
       .main-inner{
