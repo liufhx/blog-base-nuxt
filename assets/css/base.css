@@ -31,11 +31,11 @@ span{
   cursor: default;
 }
 a {
-  color: #666;
+  color: #939393;
   text-decoration: none
 }
 a:hover {
-  color: #666
+  color: #939393;
 }
 textarea{
   resize:none;

@@ -3,7 +3,13 @@
     <div class="footer-inner">
       <p>{{copyright}}</p>
       <p>博客已运行:{{runtime}}</p>
-      <p class="icp" v-if="icp.length>0"><a target="_blank" href="http://beian.miit.gov.cn" >{{icp}}</a></p>
+      <p class="icp" v-if="icp"><a target="_blank" href="http://beian.miit.gov.cn" >{{icp}}</a></p>
+      <p class="gov" v-if="gov">
+        <a target="_blank" :href="'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode='+gov" style="display:inline-block">
+        <img src="../../static/img/备案图标.png" style="float:left;padding-right: 5px;"/>
+        粤公网安备 {{gov}}号
+        </a>
+      </p>
     </div>
   </div>
 </template>
@@ -18,7 +24,8 @@ export default {
       runtime,
       copyright:page.home.copyright,
       icp:page.home.icp,
-      initDate:initDate
+      initDate:initDate,
+      gov:page.home.gov
     }
   },
   created(){
@@ -28,7 +35,7 @@ export default {
     setDuration(){
       const initDate=this.initDate?this.initDate:'2022-1-1'
       let start=this.$dayjs(initDate).valueOf()
-      let now=Date.now()   
+      let now=Date.now()
       let time=Math.floor((now-start)/1000),
       day=Math.floor(time/(24*3600)),
       hour=Math.floor((time-day*3600*24)/3600),
@@ -47,7 +54,7 @@ $fHeight:60px;
   background-color:black ;
   .footer-inner{
     width: 100%;
-    text-align: center;   
+    text-align: center;
     padding: 30px 0;
   }
   p{
@@ -55,6 +62,11 @@ $fHeight:60px;
     color: #ffff;
     line-height: 20px;
     margin: 5px 0;
+  }
+  .gov{
+    a:hover{
+      color: #ff6a00;
+    }
   }
   a{
     &:hover{

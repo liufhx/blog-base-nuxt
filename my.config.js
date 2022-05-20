@@ -45,7 +45,8 @@ module.exports={
       avatar_pic:'/img/avatar_pic.jpg',
       copyright:'©2021 root',
        //备案信息，可不填
-       icp:''
+      icp:'',
+      gov:''
     }
   }
 }
